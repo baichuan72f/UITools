@@ -16,6 +16,7 @@ public class ChartEditorHelper
     public const float BOOL_WIDTH = 15;
     public const float ARROW_WIDTH = 13;
     public const float GAP_WIDTH = 0;
+    public const float BLOCK_WIDTH = 4;
 #endif
 
     public class Styles
