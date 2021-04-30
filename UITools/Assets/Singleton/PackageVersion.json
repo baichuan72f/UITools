@@ -1,0 +1,19 @@
+{
+    "Id": "",
+    "Version": "v0.0.4",
+    "Type": 0,
+    "AccessRight": 1,
+    "DownloadUrl": "",
+    "InstallPath": "Assets/Singleton/",
+    "IncludeFileOrFolders": [
+        "Assets/Singleton"
+    ],
+    "DocUrl": "http://lianxiegame.com",
+    "Readme": {
+        "version": "v0.0.4",
+        "content": "HSingleton",
+        "author": "abm",
+        "date": "2021 年 04 月 19 日 23:28",
+        "PackageId": ""
+    }
+}
