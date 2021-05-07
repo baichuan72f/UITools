@@ -37,7 +37,6 @@ namespace UniRxIoC.Example
 
             var model = new HomeViewModel();
             mContainer.RegisterInstance(model);
-            model.Init();
 
             #endregion
 

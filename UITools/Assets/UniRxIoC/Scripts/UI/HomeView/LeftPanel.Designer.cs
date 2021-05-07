@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
- * 2021.4 DESKTOP-FN2HM7D
+ * 2021.5 DESKTOP-FN2HM7D
  ****************************************************************************/
 
 using UnityEngine;
@@ -13,16 +13,14 @@ namespace UniRxIoC
 		[SerializeField] public UnityEngine.UI.InputField FilePathInput;
 		[SerializeField] public UnityEngine.UI.Button ReadFileBtn;
 		[SerializeField] public UnityEngine.UI.Button ShowJsonBtn;
-		[SerializeField] public UnityEngine.UI.ScrollRect JsonView;
-		[SerializeField] public JsonNodeLeft JsonNodeLeft;
+		[SerializeField] public JsonViewLeft JsonViewLeft;
 
 		public void Clear()
 		{
 			FilePathInput = null;
 			ReadFileBtn = null;
 			ShowJsonBtn = null;
-			JsonView = null;
-			JsonNodeLeft = null;
+			JsonViewLeft = null;
 		}
 
 		public override string ComponentName

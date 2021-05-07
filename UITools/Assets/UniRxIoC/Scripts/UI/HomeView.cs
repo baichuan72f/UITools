@@ -1,3 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using JsonView;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,13 +33,15 @@ namespace UniRxIoC
         {
             mData = uiData as HomeViewData ?? new HomeViewData();
             // please add init code here
+
             JsonParser.Container.Inject(this);
 
             // Model -> View
-            Model.leftData.Subscribe(json => ShowData(LeftPanel.JsonNodeLeft.gameObject, json))
-                .AddTo(this);
-            Model.rightData.Subscribe(json => ShowData(RightPanel.JsonNodeRight.gameObject, json))
-                .AddTo(this);
+            Model.leftData.Subscribe(json => { })
+                .DisposeWhenGameObjectDestroyed(this);
+            Model.rightData.Subscribe(json => { })
+                .DisposeWhenGameObjectDestroyed(this);
+            Model.editItem.Subscribe(json => { EditorItem.text = json.ToJson(); }).DisposeWhenGameObjectDestroyed(this);
 
             // View -> Model
             // 这里使用 UniRx 风格
@@ -45,11 +52,41 @@ namespace UniRxIoC
                         d.LogInfo();
                         if (!string.IsNullOrEmpty(d))
                         {
-                            JObject.Parse(d.Trim());
-                            Model.leftData.Value = JObject.Parse(d.Trim());
+                            var data = JObject.Parse(d.Trim());
+                            ShowData(LeftPanel.JsonViewLeft.gameObject, data);
                         }
                     }));
-
+            RightPanel.LoadData.OnClickAsObservable()
+                .Subscribe((_) => fileLoader.RequestSomeData(RightPanel.FilePathInput.text,
+                    d =>
+                    {
+                        d.LogInfo();
+                        if (!string.IsNullOrEmpty(d))
+                        {
+                            var data = JObject.Parse(d.Trim());
+                            ShowData(RightPanel.JsonViewRight.gameObject, data);
+                        }
+                    }));
+            Add.OnClickAsObservable().Subscribe(_ =>
+            {
+                var keyStr = LeftPanel.JsonViewLeft.GetComponentInChildren<JsonContent>().selectStr;
+                var valueStr = RightPanel.JsonViewRight.GetComponentInChildren<JsonContent>().selectStr;
+                if (!string.IsNullOrEmpty(keyStr))
+                {
+                    if (Model.editItem.Value.ContainsKey(keyStr))
+                    {
+                        var v = Model.editItem.Value;
+                        v[keyStr] = valueStr;
+                        Model.editItem.Value = new JObject(v);
+                    }
+                    else
+                    {
+                        var v = Model.editItem.Value;
+                        v.Add(keyStr, valueStr);
+                        Model.editItem.Value = new JObject(v);
+                    }
+                }
+            });
             // 新增
             LeftPanel.ShowJsonBtn.OnClickAsObservable()
                 .Subscribe((_) => { Debug.Log(Model.leftData); });
@@ -78,31 +115,7 @@ namespace UniRxIoC
                 return;
             }
 
-            for (int i = 0; i < item.transform.parent.childCount; i++)
-            {
-                item.transform.parent.GetChild(i).gameObject.SetActive(false);
-            }
-
-            for (int i = 0; i < json.Count; i++)
-            {
-                if (string.IsNullOrEmpty(json[i].ToString()))
-                {
-                    continue;
-                }
-
-                GameObject itemObj = null;
-                if (i < item.transform.parent.childCount)
-                {
-                    itemObj = item.transform.parent.GetChild(i).gameObject;
-                }
-                else
-                {
-                    itemObj = GameObject.Instantiate<GameObject>(item);
-                }
-
-                itemObj.GetComponentInChildren<Text>().text = json[i].ToString();
-                itemObj.SetActive(true);
-            }
+            item.GetComponentInChildren<JsonContent>().ShowData(0, json);
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿/****************************************************************************
- * 2021.4 DESKTOP-FN2HM7D
+ * 2021.5 DESKTOP-FN2HM7D
  ****************************************************************************/
 
 using UnityEngine;
@@ -11,18 +11,16 @@ namespace UniRxIoC
 	public partial class RightPanel
 	{
 		[SerializeField] public UnityEngine.UI.InputField FilePathInput;
-		[SerializeField] public UnityEngine.UI.Button UpdateKeyBtn;
-		[SerializeField] public UnityEngine.UI.Button SaveConfigBtn;
-		[SerializeField] public UnityEngine.UI.ScrollRect JsonView;
-		[SerializeField] public JsonNodeRight JsonNodeRight;
+		[SerializeField] public UnityEngine.UI.Button LoadData;
+		[SerializeField] public UnityEngine.UI.Button Bind;
+		[SerializeField] public JsonViewRight JsonViewRight;
 
 		public void Clear()
 		{
 			FilePathInput = null;
-			UpdateKeyBtn = null;
-			SaveConfigBtn = null;
-			JsonView = null;
-			JsonNodeRight = null;
+			LoadData = null;
+			Bind = null;
+			JsonViewRight = null;
 		}
 
 		public override string ComponentName
