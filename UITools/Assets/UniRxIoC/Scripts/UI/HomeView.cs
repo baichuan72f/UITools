@@ -87,6 +87,16 @@ namespace UniRxIoC
                     }
                 }
             });
+            Remove.OnClickAsObservable().Subscribe(_ =>
+            {
+                var keyStr = LeftPanel.JsonViewLeft.GetComponentInChildren<JsonContent>().selectStr;
+                if (!string.IsNullOrEmpty(keyStr) && Model.editItem.Value.ContainsKey(keyStr))
+                {
+                    var v = Model.editItem.Value;
+                    v.Remove(keyStr);
+                    Model.editItem.Value = new JObject(v);
+                }
+            });
             // 新增
             LeftPanel.ShowJsonBtn.OnClickAsObservable()
                 .Subscribe((_) => { Debug.Log(Model.leftData); });
