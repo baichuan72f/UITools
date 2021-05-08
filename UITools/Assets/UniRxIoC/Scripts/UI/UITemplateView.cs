@@ -1,7 +1,10 @@
 using System.IO;
+using System.Resources;
 using UnityEngine;
 using UnityEngine.UI;
 using QFramework;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace UniRxIoC
 {
@@ -11,8 +14,6 @@ namespace UniRxIoC
 
     public partial class UITemplateView : UIPanel
     {
-        public string path = "/Commponent/";
-
         protected override void ProcessMsg(int eventId, QMsg msg)
         {
             throw new System.NotImplementedException();
@@ -26,7 +27,14 @@ namespace UniRxIoC
 
         protected override void OnOpen(IUIData uiData = null)
         {
-            //var assets = 
+            Addressables.LoadAssetsAsync<GameObject>("TextGroup", result =>
+            {
+                Debug.Log(result.name);
+                ListItem.gameObject.SetActive(false);
+                var item = Instantiate<GameObject>(ListItem.gameObject, ListItem.transform.parent);
+                item.SetActive(true);
+                item.GetComponentInChildren<Text>().text = result.name;
+            });
         }
 
         protected override void OnShow()

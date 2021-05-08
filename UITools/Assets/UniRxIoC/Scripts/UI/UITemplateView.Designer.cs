@@ -5,16 +5,19 @@ using QFramework;
 
 namespace UniRxIoC
 {
-	// Generate Id:6c5f5c4b-808a-4d96-aa8b-5ae603423996
+	// Generate Id:caceef51-5494-418d-9bf1-7ad286cf576a
 	public partial class UITemplateView
 	{
 		public const string Name = "UITemplateView";
 		
+		[SerializeField]
+		public UnityEngine.UI.Button ListItem;
 		
 		private UITemplateViewData mPrivateData = null;
 		
 		protected override void ClearUIComponents()
 		{
+			ListItem = null;
 			
 			mData = null;
 		}

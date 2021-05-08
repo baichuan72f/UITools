@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: testimage_png
+  m_EditorClassIdentifier: 
+  m_GroupName: testimage_png
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f8aa9528a1827bb488378e3afb3ed5e0
+  m_SerializeEntries:
+  - m_GUID: 0638617874cec9748bb08f65da476511
+    m_Address: Assets/QFramework/Framework/Examples/2.ResKitExample/1.LoadAssetBundleResExample/TestImage.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cd8c7cb3a9440b046ad11fe830cdf61f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3380c9cf6e8316d488e8d5f682c2b4a1, type: 2}
+    - {fileID: 11400000, guid: cd145e1d704a7c44c86ab530c5e92e5f, type: 2}

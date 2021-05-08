@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: uihomepanel_prefab
+  m_EditorClassIdentifier: 
+  m_GroupName: uihomepanel_prefab
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2b353780a863b5043b17fa4e50f86b33
+  m_SerializeEntries:
+  - m_GUID: 38806d693b634f441b75b7763d0a1563
+    m_Address: Assets/Old/UIHomePanel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: cd8c7cb3a9440b046ad11fe830cdf61f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c013c8046d3c4db44ae58394811e9d97, type: 2}
+    - {fileID: 11400000, guid: 562d3c8bfad37474589e7ff0b8a0287f, type: 2}

@@ -11,49 +11,9 @@
 namespace QAssetBundle
 {
     
-    public class Assetobj_prefab
+    public class Uitemplateview_prefab
     {
-        public const string BundleName = "assetobj_prefab";
-        public const string ASSETOBJ = "assetobj";
-    }
-    public class Battlescene_unity
-    {
-        public const string BundleName = "battlescene_unity";
-        public const string BATTLESCENE = "battlescene";
-    }
-    public class Homeview_prefab
-    {
-        public const string BundleName = "homeview_prefab";
-        public const string HOMEVIEW = "homeview";
-    }
-    public class Sceneres_unity
-    {
-        public const string BundleName = "sceneres_unity";
-        public const string SCENERES = "sceneres";
-    }
-    public class Spriteatlas_spriteatlas
-    {
-        public const string BundleName = "spriteatlas_spriteatlas";
-        public const string SPRITEATLAS = "spriteatlas";
-    }
-    public class Testcomponent_prefab
-    {
-        public const string BundleName = "testcomponent_prefab";
-        public const string TESTCOMPONENT = "testcomponent";
-    }
-    public class Testimage_png
-    {
-        public const string BundleName = "testimage_png";
-        public const string TESTIMAGE = "testimage";
-    }
-    public class Textureexample1_png
-    {
-        public const string BundleName = "textureexample1_png";
-        public const string TEXTUREEXAMPLE1 = "textureexample1";
-    }
-    public class Uihomepanel_prefab
-    {
-        public const string BundleName = "uihomepanel_prefab";
-        public const string UIHOMEPANEL = "uihomepanel";
+        public const string BundleName = "uitemplateview_prefab";
+        public const string UITEMPLATEVIEW = "uitemplateview";
     }
 }
