@@ -6,11 +6,13 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using QF.Extensions;
 using QFramework;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
+using WWHY.Component;
 
-public class TextGroupComponent : MonoBehaviour
+public class TextGroupComponent : MonoBehaviour, IUIComponent
 {
     public Text[] texts;
     [HideInInspector] public string template;
@@ -23,10 +25,6 @@ public class TextGroupComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            LoadTemplate().LogInfo();
-        }
     }
 
     public JObject CreatTemplate2(GameObject target)

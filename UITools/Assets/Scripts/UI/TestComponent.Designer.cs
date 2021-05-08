@@ -5,16 +5,31 @@ using QFramework;
 
 namespace UniRxIoC
 {
-	// Generate Id:095c3188-dc97-47d9-91c8-0067c9cb8df8
+	// Generate Id:f62eaa31-c949-4fe3-b843-691ac2cff8d2
 	public partial class TestComponent
 	{
 		public const string Name = "TestComponent";
 		
+		[SerializeField]
+		public UnityEngine.UI.Text Text0;
+		[SerializeField]
+		public UnityEngine.UI.Text Text1;
+		[SerializeField]
+		public UnityEngine.UI.Text Text2;
+		[SerializeField]
+		public UnityEngine.UI.Text Text3;
+		[SerializeField]
+		public UnityEngine.UI.Text Text4;
 		
 		private TestComponentData mPrivateData = null;
 		
 		protected override void ClearUIComponents()
 		{
+			Text0 = null;
+			Text1 = null;
+			Text2 = null;
+			Text3 = null;
+			Text4 = null;
 			
 			mData = null;
 		}

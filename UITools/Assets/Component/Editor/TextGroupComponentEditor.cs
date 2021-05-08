@@ -7,11 +7,11 @@ using UnityEditor;
 [CustomEditor(typeof(TextGroupComponent))]
 public class TextGroupComponentEditor : Editor
 {
-    private TextGroupComponent Group;
+    private TextGroupComponent m_GroupIui;
 
     private void OnEnable()
     {
-        Group = target as TextGroupComponent;
+        m_GroupIui = target as TextGroupComponent;
     }
 
     public override void OnInspectorGUI()
@@ -19,7 +19,7 @@ public class TextGroupComponentEditor : Editor
         base.OnInspectorGUI();
         EditorGUILayout.BeginVertical();
         EditorGUILayout.PrefixLabel("template:");
-        Group.template = EditorGUILayout.TextArea(Group.template);
+        m_GroupIui.template = EditorGUILayout.TextArea(m_GroupIui.template);
         EditorGUILayout.EndVertical();
     }
 }
